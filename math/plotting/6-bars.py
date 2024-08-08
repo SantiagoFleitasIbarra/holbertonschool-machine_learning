@@ -18,11 +18,11 @@ def bars():
     names = ['Farrah', 'Fred', 'Felicia']
 
     plt.bar(names, apples, width=0.5, color='red', label='apples')
-    plt.bar(names, bananas, width=0.5, color='yellow', label='bananas',
+    plt.bar(names, bananas, width=0.5, color='yellow', label='bananas', 
             bottom=apples)
-    plt.bar(names, oranges, width=0.5, color='#ff8000', label='oranges',
+    plt.bar(names, oranges, width=0.5, color='#ff8000', label='oranges', 
             bottom=apples + bananas)
-    plt.bar(names, peaches, width=0.5, color='#ffe5b4', label='peaches',
+    plt.bar(names, peaches, width=0.5, color='#ffe5b4', label='peaches', 
             bottom=apples + bananas + oranges)
 
     plt.ylabel('Quantity of Fruit')
