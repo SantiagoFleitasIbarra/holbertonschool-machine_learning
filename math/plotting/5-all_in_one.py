@@ -29,10 +29,14 @@ def all_in_one():
     np.random.seed(5)
     student_grades = np.random.normal(68, 15, 50)
 
+    plt.figure(figsize=(10, 8))
+    
+    plt.subplot(3, 2, 1)
     plt.plot(y0, 'r-')
     plt.xlim(0, 10)
     plt.yticks(np.arange(0, 1001, 500))
 
+    plt.subplot(3, 2, 2)
     plt.scatter(x1, y1, c='magenta')
     plt.xlabel('Height (in)')
     plt.ylabel('Weight (lbs)')
@@ -40,6 +44,7 @@ def all_in_one():
     plt.yticks(np.arange(170, 191, 10))
     plt.xticks(np.arange(60, 81, 10))
 
+    plt.subplot(3, 2, 3)
     plt.plot(x2, y2)
     plt.xlabel('Time (years)')
     plt.ylabel('Fraction Remaining')
@@ -47,6 +52,7 @@ def all_in_one():
     plt.yscale('log')
     plt.xlim(0, 28650)
 
+    plt.subplot(3, 2, 4)
     plt.plot(x2, y2)
     plt.xlabel('Time (years)')
     plt.ylabel('Fraction Remaining')
@@ -55,6 +61,7 @@ def all_in_one():
     plt.xlim(0, 28650)
     plt.xticks(np.arange(0, 20001, 10000))
 
+    plt.subplot(3, 2, 5)
     plt.plot(x3, y31, 'r--', label='C-14')
     plt.plot(x3, y32, 'g-', label='Ra-226')
     plt.xlabel('Time (years)')
@@ -66,6 +73,7 @@ def all_in_one():
     plt.xticks(np.arange(0, 20001, 5000))
     plt.yticks(np.arange(0.0, 1.1, 0.5))
 
+    plt.subplot(3, 1, 3)
     plt.hist(student_grades, bins=range(0, 101, 10), edgecolor='black')
     plt.axis([0, 100, 0, 30])
     plt.xticks(np.arange(0, 110, 10))
@@ -75,4 +83,5 @@ def all_in_one():
     plt.title('Project A')
 
     plt.suptitle('All in One')
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
     plt.show()
