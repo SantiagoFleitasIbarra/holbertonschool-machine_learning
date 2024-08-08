@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+"""5-all_in_one"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-def all_in_one():
 
+def all_in_one():
+    """Define all_in_one function"""
     y0 = np.arange(0, 11) ** 3
 
     mean = [69, 0]
