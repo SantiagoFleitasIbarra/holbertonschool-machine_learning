@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+"""0-build_decision_tree"""
 
 import numpy as np
 
 class Node:
+    """class Node"""
     def __init__(self, feature=None, threshold=None, left_child=None, right_child=None, is_root=False, depth=0):
         self.feature = feature
         self.threshold = threshold
@@ -22,6 +24,7 @@ class Node:
            return max(left_depth, right_depth)
 
 class Leaf(Node):
+    """class leaf"""
     def __init__(self, value, depth=None):
         super().__init__()
         self.value = value
@@ -31,10 +34,8 @@ class Leaf(Node):
     def max_depth_below(self) :
         return self.depth
 
-    def count_nodes_below(self, only_leaves=False):
-        return 1
-
 class Decision_Tree():
+    """class decision tree"""
     def __init__(self, max_depth=10, min_pop=1, seed=0, split_criterion="random", root=None):
         self.rng = np.random.default_rng(seed)
         if root:
@@ -50,6 +51,3 @@ class Decision_Tree():
 
     def depth(self) :
         return self.root.max_depth_below()
-
-    def count_nodes(self, only_leaves=False):
-        return self.root.count_nodes_below(only_leaves=only_leaves)
