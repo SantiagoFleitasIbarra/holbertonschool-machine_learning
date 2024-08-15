@@ -4,11 +4,9 @@
 
 import numpy as np
 
-
-class Node:
+class Node():
     """class Node"""
-    def __init__(self, feature=None, threshold=None, left_child=None,
-                right_child=None, is_root=False, depth=0):
+    def __init__(self, feature=None, threshold=None, left_child=None, right_child=None, is_root=False, depth=0):
         self.feature = feature
         self.threshold = threshold
         self.left_child = left_child
@@ -27,7 +25,7 @@ class Node:
                 right_depth = self.right_child.max_depth_below()
                 return max(left_depth, right_depth)
 
-class Leaf(Node):  
+class Leaf(Node):
     """class leaf"""
     def __init__(self, value, depth=None):
         super().__init__()
