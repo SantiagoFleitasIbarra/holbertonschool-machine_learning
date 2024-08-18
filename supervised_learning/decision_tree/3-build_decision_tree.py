@@ -59,6 +59,7 @@ class Node():
             return 1 + left_count + right_count
 
     def left_child_add_prefix(self, text):
+        """Left child prefix"""
         lines = text.split("\n")
         new_text = "    +--" + lines[0] + "\n"
         for x in lines[1:]:
@@ -66,6 +67,7 @@ class Node():
         return (new_text)
 
     def right_child_add_prefix(self, text):
+        """Right child prefix"""
         lines = text.split("\n")
         new_text = "    +--" + lines[0] + "\n"
         for x in lines[1:]:
