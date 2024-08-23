@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """0-neuron"""
 
-import numpy as np 
+import numpy as np
 
 
 class Neuron:
