@@ -6,7 +6,6 @@ import numpy as np
 
 def one_hot_decode(one_hot):
     """that converts a one-hot matrix into a vector of labels"""
-    try:
-        return np.argmax(one_hot, axis=0)
-    except Exception:
+    if not isinstance(one_hot, np.ndarray):
         return None
+    return np.argmax(one_hot, axis=0)
