@@ -10,6 +10,6 @@ def forward_prop(x, layer_sizes=[], activations=[]):
     """forward_prop"""
     output = x
     for i in range(len(layer_sizes)):
-        activation = activations[i] if activations[i] is not None else None
-        output = create_layer(output, layer_sizes[i], activations)
+        activation = activations[i] if i < len(activations) else None
+        output = create_layer(output, layer_sizes[i], activation)
     return output
